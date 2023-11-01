@@ -1,0 +1,17 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Description: Create an EC2 key pair
+
+Parameters:
+  KeyName:
+    Type: String 
+
+Resources:
+  EC2KeyPair:
+    Type: AWS::EC2::KeyPair
+    Properties:
+      KeyName: !Ref KeyName 
+
+Outputs:
+  KeyPairName:
+    Description: The name of the created EC2 key pair
+    Value: !Ref EC2KeyPair
